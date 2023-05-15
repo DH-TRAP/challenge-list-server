@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Even Sum</title>
+</head>
+
+<body>
+    <!-- <br>
+    Enter length of array between 1 to 20.
+    <br>
+    <input type="number" class="inArrLength">
+    <div class="msg"></div>
+    <button class="enter">Enter</button> -->
+    <br>
+    Enter Array <input class="inArr" type="text" placeholder="For Example : 1,2,3,4,5,6,7"
+        style="height:2.5vw; width:15vw">
+    <button class="calc">Calculate</button>
+    <div class="array"></div>
+    <br>
+    <div class="sumEven"></div>
+    <br>
+    <div class="sumOdd"></div>
+    <script>
+        'use-strict';
+        //DATE: 16-02-2023
+
+        document.querySelector('.calc').addEventListener('click', function () {
+            const str = document.querySelector('.inArr').value;
+            const arr = str.split(",");
+
+            let sumEven = 0;
+            let sumOdd = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 === 0) {
+                    sumEven += Number(arr[i]);
+                }
+                else if (!(arr[i] % 2 === 0)) {
+                    sumOdd += Number(arr[i]);
+                }
+            };
+            document.querySelector('.array').textContent = `The array is [${arr}]`;
+            document.querySelector('.sumOdd').textContent = `Sum of Odd Values: ${sumOdd}`;
+            document.querySelector('.sumEven').textContent = `Sum of Even Values: ${sumEven}`;
+        }
+        );
+    </script>
+</body>
+
+</html>

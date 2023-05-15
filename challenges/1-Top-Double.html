@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="margin: 15vw 40vw">
+        <label>Start Number (X) :</label>
+        <input type="number" class="start" style="width: 8vw; height: 2vw; outline: none;" />
+
+        <br><br>
+        <label>Top Number (Y) :</label>
+        <input type="number" class="top" style="width: 8vw; height: 2vw; outline: none;" />
+
+        <br><br>
+        <button class="run" style="height: 2.5vw; width: 3vw; color: green; font-size: 1vw; outline: none;">Run</button>
+
+        <div class="msg" style="position: absolute; margin-top: 2.5vw; font-size: 1.5vw">
+            -------------
+        </div>
+        <div class="ans" style="position: absolute; margin-top: 5vw; font-size: 1.5vw">
+            Largest Double of X Until Y : --
+        </div>
+    </div>
+    <script>
+        'use-strict';
+        //DATE: 15-02-2023
+
+        document.querySelector('.start').value = '';
+        document.querySelector('.top').value = '';
+
+        const run = document.querySelector('.run');
+        const displaymsg = function (text) { document.querySelector('.msg').textContent = text; }
+        const displayans = function (text) {
+            document.querySelector('.ans').textContent = `Ans : ${text}`;
+        }
+
+        run.addEventListener('click', function () {
+            const start = document.querySelector('.start').value;
+            const top = document.querySelector('.top').value;
+
+            if (top < 0 || start < 0) { displaymsg("Please enter a positive number."); displayans('--'); }
+            else {
+                if (start === '' || top === '') {
+                    displaymsg('Please Enter a number.'); displayans('--');
+                }
+                else {
+                    if (top == start) { displaymsg('Both Numbers are same.'); displayans('0'); }
+                    else {
+                        if (start - top >= 0) { displaymsg('Start should be smaller then top.'); displayans('--'); }
+                        else {
+                            displaymsg(`Start is ${start} & Top is ${top}`)
+                            let i = start;
+                            if (i * 2 < top) {
+                                //Using While Loop.
+                                while (i * 2 < top) {
+                                    i = i * 2;
+                                }
+                                displayans(i);
+                                //Using for Loop.
+                                // let double = start;
+                                // for(let j=0; double*2<top; j++)
+                                // {
+                                //     double = double * 2;
+                                // }
+                                // displayans(double);
+                            }
+                            else {
+                                displayans('Value remains same');
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

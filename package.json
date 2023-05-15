@@ -1,0 +1,15 @@
+{
+  "name": "challenge-list-server",
+  "version": "1.0.0",
+  "description": "A server that responds to multiple requests",
+  "main": "index.js",
+  "scripts": {
+    "start": "server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "Parth Dobariya",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
+}
