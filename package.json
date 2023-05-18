@@ -4,8 +4,11 @@
   "description": "A server that responds to multiple requests",
   "main": "index.js",
   "scripts": {
-    "start": "server.js",
+    "start": "node server.js",
     "dev": "nodemon server.js"
+  },
+  "resolutions": {
+    "cssnano-preset-simple": "3.0.0"
   },
   "author": "Parth Dobariya",
   "license": "ISC",
