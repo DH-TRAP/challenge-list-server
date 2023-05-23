@@ -44,6 +44,6 @@ const server = http.createServer((req, res) => {
   else error();
 });
 
-server.listen(port, hostname, () => {
+server.listen(port, () => {
   console.log(`server Running at ${port} from ${__dirname}`)
 })
